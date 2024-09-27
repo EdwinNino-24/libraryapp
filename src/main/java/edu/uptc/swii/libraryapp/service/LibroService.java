@@ -17,6 +17,19 @@ public class LibroService {
     }
 
     public List<Libro> buscarDestacados() {
-        return libroRepository.findAll();
+        return libroRepository.buscarTodos();
     }
+
+    public List<Libro> buscarPorEditorial(int editorialId) {
+        return libroRepository.buscarPorEditorial(editorialId);
+    }
+
+    public List<Libro> buscar(String consulta) {
+        return libroRepository.buscar(consulta);
+    }
+
+    public void guardar(Libro libro) {
+        libroRepository.save(libro);
+    }
+
 }
